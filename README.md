@@ -1,20 +1,15 @@
 # word_hk_auto_test
 test task for auto test Word app for hot key module
 
-1. Item 1
-1. Item 2
-1. Item 3
-   2. Item 3a
-   2. Item 3b
 
 Сheck list:
 
 1.	Is Hotkeys a dialog modal:
-   2.	dialog window is displayed
-   3.	blocks user interaction with the parent application
-   4.	not allow making any modification to a scene 
-   5.	not allow making any modification to other application components 
-   6.	can be run even if no scene is opened 
+   - dialog window is displayed
+   - blocks user interaction with the parent application
+   - not allow making any modification to a scene 
+   - not allow making any modification to other application components 
+   - can be run even if no scene is opened 
 2.	Hotkeys dialog GUI elements:
 a.	commands list exists
 b.	information area exists

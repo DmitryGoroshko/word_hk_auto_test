@@ -155,18 +155,20 @@ test task for auto test Word app for hot key module
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog opened |
 |2. Is information area located under the commands list | yes |
-|3. Click to the command name in comands list | command selected, Information area includes the command name in **bold** and the command description |
+|3. Click to the command name in comands list | the command cell is highlighted, Information area includes the command name in **bold** and the command description |
 |4. Is command description as in the command tooltip on the Ribbon | yes |
 
-### Test case #7 Command selection
+### Test case #7 Command selection, add new hotkey combination
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog opened |
-|2. 
+|2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
+|3. Enter all allpossible hotkey combination | hotkey combination added to the right column in front of command name. Recognized key combination must match with the entered from the keyboard| 
+|4. Select another command in the commansd list | last entered hotkey saved |
+|5. Select previous command again | the command cell is highlighted |
+|6. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
+|7. Select another command in the commansd list | last entered hotkey added to the hotkey combination. Two hotkey combination for the one command |
+|8. Select previous command again | the command cell is highlighted |
+|9. Press Backspace keyboard button | all hotkey combination cleared |
 
-Clicking will select a command
-Hotkeys of the selected command can be modified
-Backspace keyboard button remove all existing hotkeys
-Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
-Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
-Selecting another command in the list will store the entered hotkeys
+

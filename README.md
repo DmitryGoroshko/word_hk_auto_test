@@ -19,7 +19,7 @@ test task for auto test Word app for hot key module
     - command names same as on the Ribbon
     - right column displays assigned hotkeys
     - organized as Ribbon tabs
-4.	commands group
+4.	Commands group
     - name same as Ribbon tab
     - ‘+’/’-’ Button located to the left of the group name
     - expanded with the ‘+’ Button
@@ -46,4 +46,3 @@ test task for auto test Word app for hot key module
     - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
     - New hotkeys commands must be saved
     - New hotkeys commands recorded in the registry
-

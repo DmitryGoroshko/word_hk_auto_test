@@ -57,7 +57,7 @@ test task for auto test Word app for hot key module
 ### Test case #1.1 Hotkeys dialog modal (scene closed)
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-| 1.	make sure that the scene closed | scene closed |
+|1.	make sure that the scene closed | scene closed |
 |2.	if not – close it | - |
 |3.	open Hotkeys dialog | Hotkeys dialog opened |
 |4.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | - |
@@ -70,9 +70,9 @@ test task for auto test Word app for hot key module
 ### Test case #1.2 Hotkeys dialog modal (scene opened)
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	open the scene closed | scene opened |
+|1.	open the scene | scene opened |
 |2.	open Hotkeys dialog | Hotkeys dialog opened |
-|3.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | - |
+|3.	make actions to scene (out from Hotkeys window, but inside parent application area) | scene are not enable does not respond to actions |
 |3.1.	mouse click | application does not respond to actions |
 |3.2.	mouse double click | application does not respond to actions |
 |3.3.	mouse drug and drop test file from explorer to tested application | application does not respond to actions |

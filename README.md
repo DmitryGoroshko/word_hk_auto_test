@@ -196,7 +196,7 @@ test task for auto test Word app for hot key module
 |8. Enter hotkey from step 3 in the main window | command from step 2 was called |
 |9. Find hotkey from step 3 in the registry | new hotkey from step 3 saved in registry |
 
-### Test case #8.1 Closing Hotkeys window Cancel button
+### Test case #8.2 Closing Hotkeys window Cancel button
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog opened |

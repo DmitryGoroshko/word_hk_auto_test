@@ -79,30 +79,24 @@ test task for auto test Word app for hot key module
 |3.4.	keyboard input [a…z][1…0] | application does not respond to actions |
 |3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
 
-### Test case #2.1 Hotkeys dialog modal (scene opened)
+### Test case #2 GUI elements
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog| Hotkeys dialog opened |
-|2.	Check the title of the window dialog | "Hotkeys" |
+|2.	The title of the window dialog | "Hotkeys" |
 |3.	Does commands list exist? | yes |
 |4.	Does information area exist? | yes |
 |5.	Does button "OK" exist? | yes |
 |6.	Does button "Cancel" exist? | yes |
 |7. Resize window by mouse at the bottom right window corner | the window has not been resized |
 
-3.	Сommands list:
-    - divided into two columns 
-    - left column presents command names 
-    - command names same as on the Ribbon
-    - right column displays assigned hotkeys
-    - organized as Ribbon tabs
-
 ### Test case #3 Commands list
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog| Hotkeys dialog opened |
-|divided into two columns 
-|left column presents command names 
-|command names same as on the Ribbon
-|right column displays assigned hotkeys
-|organized as Ribbon tabs
+|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
+|2. Is Commands list divided into two columns?   | yes |
+|3. Does the left column represent command names?| yes |
+|4. command names same as on the Ribbon          |
+|5. command names same as on the Ribbon          |
+|5. right column displays assigned hotkeys       |
+|6. organized as Ribbon tabs                     |   

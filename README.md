@@ -19,23 +19,25 @@ test task for auto test Word app for hot key module
     - command names same as on the Ribbon
     - right column displays assigned hotkeys
     - organized as Ribbon tabs
-4.	Commands group
+4.	Commands group:
     - name same as Ribbon tab
     - ‘+’/’-’ Button located to the left of the group name
     - expanded with the ‘+’ Button
     - contracted with the ‘-’ Button
     - clicking will select a command.
-4.	Information about the selected command
+4.	Information about the selected command:
     - located under the commands list
     - includes the command name in bold
     - includes the command description
     - command description as in the command tooltip on the Ribbon
-5.	Hotkeys of the selected command can be modified
-    - Backspace keyboard button will remove all existing hotkeys
+5.	Command selection:
+    - Hotkeys of the selected command can be modified
+    - Backspace keyboard button remove all existing hotkeys
     - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
     - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
     - Selecting another command in the list will store the entered hotkeys
-6.	If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
+6.	Message box:
+    - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
     - ОК button
         - closes the dialog
         - applies all the changes

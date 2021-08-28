@@ -171,4 +171,17 @@ test task for auto test Word app for hot key module
 |8. Select previous command again | the command cell is highlighted |
 |9. Press Backspace keyboard button | all hotkey combination cleared |
 
+### Test case #8 Message box
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
+|6. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
 
+    - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
+    - ОК button
+        - closes the dialog
+        - applies all the changes
+    - Cancel button
+        - closes the dialog
+        - does not make any change to commands hotkeys 

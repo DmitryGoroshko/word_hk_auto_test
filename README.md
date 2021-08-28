@@ -54,7 +54,7 @@ test task for auto test Word app for hot key module
 1.	OS required for the tested application.
 2.	Launch the application.
 
-### Test case #1.1 Hotkeys dialog modal no scene
+### Test case #1.1 Hotkeys dialog modal (scene closed)
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 | 1.	make sure that the scene closed | scene closed |
@@ -66,3 +66,16 @@ test task for auto test Word app for hot key module
 |4.3.	mouse drug and drop test file from explorer to tested application | application does not respond to actions |
 |4.4.	keyboard input [a…z][1…0] | application does not respond to actions |
 |4.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
+
+### Test case #1.2 Hotkeys dialog modal (scene opened)
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	open the scene closed | scene opened |
+|2.	open Hotkeys dialog | Hotkeys dialog opened |
+|3.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | - |
+|3.1.	mouse click | application does not respond to actions |
+|3.2.	mouse double click | application does not respond to actions |
+|3.3.	mouse drug and drop test file from explorer to tested application | application does not respond to actions |
+|3.4.	keyboard input [a…z][1…0] | application does not respond to actions |
+|3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
+

@@ -90,4 +90,4 @@ test task for auto test Word app for hot key module
 |6.	Does button "Cancel" exist? | yes |
 
 
-![pic](/images/Hotkeys_layout.png)
+![pic](/Hotkeys_layout.png)

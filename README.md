@@ -9,11 +9,11 @@ test task for auto test Word app for hot key module
 
 Сheck list:
 1.	Is Hotkeys a dialog modal:
-a.	dialog window is displayed
-b.	blocks user interaction with the parent application
-c.	not allow making any modification to a scene 
-d.	not allow making any modification to other application components 
-e.	can be run even if no scene is opened 
+   a.	dialog window is displayed
+   b.	blocks user interaction with the parent application
+   c.	not allow making any modification to a scene 
+   d.	not allow making any modification to other application components 
+   e.	can be run even if no scene is opened 
 2.	Hotkeys dialog GUI elements:
 a.	commands list exists
 b.	information area exists

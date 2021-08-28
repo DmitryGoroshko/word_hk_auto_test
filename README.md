@@ -58,7 +58,7 @@ test task for auto test Word app for hot key module
 | 1.	make sure that the scene closed | |
 |2.	if not – close it | |
 |3.	open Hotkeys dialog | |
-|4.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | |
+|4.	make actions to parent application components (out from Hotkeys window, but inside parent application area) |fdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff |
 |a.	mouse click | |
 |b.	mouse double click | |
 |c.	mouse drug and drop test file from explorer to tested application | |

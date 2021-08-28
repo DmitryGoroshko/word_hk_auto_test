@@ -26,24 +26,24 @@ test task for auto test Word app for hot key module
     - contracted with the ‘-’ Button
     - clicking will select a command.
 4.	Information about the selected command
-a.	located under the commands list
-b.	includes the command name in bold
-c.	includes the command description
-d.	command description as in the command tooltip on the Ribbon
+    - located under the commands list
+    - includes the command name in bold
+    - includes the command description
+    - command description as in the command tooltip on the Ribbon
 5.	Hotkeys of the selected command can be modified
-a.	Backspace keyboard button will remove all existing hotkeys
-b.	Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
-c.	Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
-d.	Selecting another command in the list will store the entered hotkeys
+    - Backspace keyboard button will remove all existing hotkeys
+    - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
+    - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
+    - Selecting another command in the list will store the entered hotkeys
 6.	If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
-a.	ОК button
-i.	closes the dialog
-ii.	applies all the changes
-b.	Cancel button
-i.	closes the dialog
-ii.	does not make any change to commands hotkeys 
+    - ОК button
+        - closes the dialog
+        - applies all the changes
+    - Cancel button
+        - closes the dialog
+        - does not make any change to commands hotkeys 
 7.	After the hotkeys are changed using the dialog
-a.	corresponding Ribbon tooltips are updated to reflect the changed hotkeys
-b.	New hotkeys commands must be saved
-c.	New hotkeys commands recorded in the registry
+    - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
+    - New hotkeys commands must be saved
+    - New hotkeys commands recorded in the registry
 

@@ -13,7 +13,7 @@ test task for auto test Word app for hot key module
     - information area exists
     - button OK exists
     - button Cancel exists
-3.	Сommands list:
+3.	Сommands list GUI:
     - divided into two columns 
     - left column presents command names 
     - command names same as on the Ribbon
@@ -24,19 +24,25 @@ test task for auto test Word app for hot key module
     - ‘+’/’-’ Button located to the left of the group name
     - expanded with the ‘+’ Button
     - contracted with the ‘-’ Button
-    - clicking will select a command.
-5.	Information about the selected command:
+5.  Commands list scroll bar
+    - mouse click
+    - mouse scroll
+    - keyboard Up Down
+    - keyboard PageUp PageDown
+    - keyboard Home End
+6.	Information about the selected command:
     - located under the commands list
     - includes the command name in bold
     - includes the command description
     - command description as in the command tooltip on the Ribbon
-6.	Command selection:
+7.	Command selection:	    
+    - Clicking will select a command
     - Hotkeys of the selected command can be modified
     - Backspace keyboard button remove all existing hotkeys
     - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
     - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
     - Selecting another command in the list will store the entered hotkeys
-7.	Message box:
+8.	Message box:
     - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
     - ОК button
         - closes the dialog
@@ -44,7 +50,7 @@ test task for auto test Word app for hot key module
     - Cancel button
         - closes the dialog
         - does not make any change to commands hotkeys 
-8.	After the hotkeys are changed using the dialog
+9.	After the hotkeys are changed using the dialog
     - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
     - New hotkeys commands must be saved
     - New hotkeys commands recorded in the registry

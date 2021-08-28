@@ -123,5 +123,6 @@ test task for auto test Word app for hot key module
 |3. Press '-' Button to the left of the group name          |  Command groups contracted |
 |4. Is the '-' Button changed to '+' Button?    | yes |
 |5. Press '+' Button to the left of the group name | Command groups expanded |
+|6. Is the '+' Button changed to '-' Button?    | yes |
 
 

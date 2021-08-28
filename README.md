@@ -7,10 +7,10 @@ This python script is autotest fot MS Word appliction hotkey module. It's genera
 
 ### System requirements
 My configuration:
-        - Windows 10 64-bit
-        - MS Office ProfessionalPlus 2019 Word 2102 build 13801.20864 32-bit
-        - PyCharm 2021.2 (Community Edition 64-bit) 
-        - Python 3.9.5
+- Windows 10 64-bit
+- MS Office ProfessionalPlus 2019 Word 2102 build 13801.20864 32-bit
+- PyCharm 2021.2 (Community Edition 64-bit) 
+- Python 3.9.5
 
 ### Pre-conditions 
 pywinauto lib

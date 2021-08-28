@@ -47,13 +47,20 @@ test task for auto test Word app for hot key module
     - New hotkeys commands must be saved
     - New hotkeys commands recorded in the registry
 
-## Case test
+## Test cases
+**Pre-conditions:**
+1.	OS required for the tested application.
+2.	Launch the application.
 
-| Syntax | Description |
+### Test case #1.1 Hotkeys dialog modal no scene
+| Test Steps | Expected Result |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
-| Paragraph | Text |
-| Paragraph | Text |
-| Paragraph | Text |
-| Paragraph | Text |
+| 1.	make sure that the scene closed
+2.	if not – close it
+3.	open Hotkeys dialog
+4.	make actions to parent application components (out from Hotkeys window, but inside parent application area)
+a.	mouse click
+b.	mouse double click
+c.	mouse drug and drop test file from explorer to tested application
+d.	keyboard input [a…z][1…0]
+e.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | Title |

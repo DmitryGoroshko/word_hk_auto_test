@@ -46,3 +46,11 @@ test task for auto test Word app for hot key module
     - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
     - New hotkeys commands must be saved
     - New hotkeys commands recorded in the registry
+
+## Case test
+
+| Syntax | Description |
+|sdsdsdsdf|
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |

@@ -25,18 +25,18 @@ test task for auto test Word app for hot key module
     - expanded with the ‘+’ Button
     - contracted with the ‘-’ Button
     - clicking will select a command.
-4.	Information about the selected command:
+5.	Information about the selected command:
     - located under the commands list
     - includes the command name in bold
     - includes the command description
     - command description as in the command tooltip on the Ribbon
-5.	Command selection:
+6.	Command selection:
     - Hotkeys of the selected command can be modified
     - Backspace keyboard button remove all existing hotkeys
     - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
     - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
     - Selecting another command in the list will store the entered hotkeys
-6.	Message box:
+7.	Message box:
     - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
     - ОК button
         - closes the dialog
@@ -44,7 +44,7 @@ test task for auto test Word app for hot key module
     - Cancel button
         - closes the dialog
         - does not make any change to commands hotkeys 
-7.	After the hotkeys are changed using the dialog
+8.	After the hotkeys are changed using the dialog
     - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
     - New hotkeys commands must be saved
     - New hotkeys commands recorded in the registry
@@ -96,7 +96,32 @@ test task for auto test Word app for hot key module
 |1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
 |2. Is Commands list divided into two columns?   | yes |
 |3. Does the left column represent command names?| yes |
-|4. command names same as on the Ribbon          |
-|5. command names same as on the Ribbon          |
-|5. right column displays assigned hotkeys       |
-|6. organized as Ribbon tabs                     |   
+|4. Does the right column displays assigned hotkeys? | yes |
+|5. Is command names in the commands list same as on the Ribbon | yes | 
+|6. Is command group names in the commands list same as the Ribbon tabs | yes |
+
+### Test case #3 Commands list
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
+|2. Is Commands list divided into two columns?   | yes |
+|3. Does the left column represent command names?| yes |
+|4. Does the right column displays assigned hotkeys? | yes |
+|5. Is command names in the commands list same as on the Ribbon | yes | 
+|6. Is command group names in the commands list same as the Ribbon tabs | yes |
+
+4.	Commands group:
+    - expanded with the ‘+’ Button
+    - contracted with the ‘-’ Button
+    - clicking will select a command.
+
+### Test case #4 Commands group
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
+|2. Is ‘+’/’-’ Button located to the left of the group name | yes |
+|3. Press '-' Button to the left of the group name          |  Command groups contracted |
+|4. Is the '-' Button changed to '+' Button?    | yes |
+|5. Press '+' Button to the left of the group name | Command groups expanded |
+
+

@@ -1,5 +1,20 @@
-# word_hk_auto_test
-test task for auto test Word app for hot key module
+# Word hotkey auto test
+Test task for auto test Word app for hot key module
+
+## Python auto test program description
+### About the program
+This python script is autotest fot MS Word appliction hotkey module. It's generate all possiple hot key combinations, type and check recognition. 
+
+### System requirements
+My configuration:
+    - Windows 10 64-bit
+    - MS Office ProfessionalPlus 2019 Word 2102 build 13801.20864 32-bit
+    - PyCharm 2021.2 (Community Edition 64-bit) 
+    - Python 3.9.5
+
+### Pre-conditions 
+pywinauto lib
+please start your default browser before starting the script (beause of the Shift+F1 hotkey)
 
 ## Сheck list:
 1.  Is Hotkeys a dialog modal:

@@ -1,9 +1,7 @@
 # word_hk_auto_test
 test task for auto test Word app for hot key module
 
-
-Сheck list:
-
+## Сheck list:
 1.  Is Hotkeys a dialog modal:
     - dialog window is displayed
     - blocks user interaction with the parent application
@@ -11,22 +9,22 @@ test task for auto test Word app for hot key module
     - not allow making any modification to other application components 
     - can be run even if no scene is opened 
 2.	Hotkeys dialog GUI elements:
-a.	commands list exists
-b.	information area exists
-c.	button OK exists
-d.	button Cancel exists
+    - commands list exists
+    - information area exists
+    - button OK exists
+    - button Cancel exists
 3.	Сommands list:
-a.	divided into two columns 
-b.	left column presents command names 
-c.	command names same as on the Ribbon
-d.	right column displays assigned hotkeys
-e.	organized as Ribbon tabs
-f.	commands group
-i.	name same as Ribbon tab
-ii.	‘+’/’-’ Button located to the left of the group name
-iii.	expanded with the ‘+’ Button
-iv.	contracted with the ‘-’ Button
-g.	clicking will select a command.
+    - divided into two columns 
+    - left column presents command names 
+    - command names same as on the Ribbon
+    - right column displays assigned hotkeys
+    - organized as Ribbon tabs
+4.	commands group
+    - name same as Ribbon tab
+    - ‘+’/’-’ Button located to the left of the group name
+    - expanded with the ‘+’ Button
+    - contracted with the ‘-’ Button
+    - clicking will select a command.
 4.	Information about the selected command
 a.	located under the commands list
 b.	includes the command name in bold

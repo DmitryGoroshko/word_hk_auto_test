@@ -88,6 +88,21 @@ test task for auto test Word app for hot key module
 |4.	Does information area exist? | yes |
 |5.	Does button "OK" exist? | yes |
 |6.	Does button "Cancel" exist? | yes |
+|7. Resize window by mouse at the bottom right window corner | the window has not been resized |
 
+3.	Сommands list:
+    - divided into two columns 
+    - left column presents command names 
+    - command names same as on the Ribbon
+    - right column displays assigned hotkeys
+    - organized as Ribbon tabs
 
-![pic](/Hotkeys_layout.png)
+### Test case #3 Commands list
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog| Hotkeys dialog opened |
+|divided into two columns 
+|left column presents command names 
+|command names same as on the Ribbon
+|right column displays assigned hotkeys
+|organized as Ribbon tabs

@@ -79,3 +79,15 @@ test task for auto test Word app for hot key module
 |3.4.	keyboard input [a…z][1…0] | application does not respond to actions |
 |3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
 
+### Test case #2.1 Hotkeys dialog modal (scene opened)
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog| Hotkeys dialog opened |
+|2.	Check the title of the window dialog | "Hotkeys" |
+|3.	Does commands list exist? | yes |
+|4.	Does information area exist? | yes |
+|5.	Does button "OK" exist? | yes |
+|6.	Does button "Cancel" exist? | yes |
+
+
+![pic](/images/Hotkeys_layout.png)

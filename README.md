@@ -192,24 +192,19 @@ test task for auto test Word app for hot key module
 |4. Select another command in the commansd list | last entered hotkey saved |
 |5. Click "OK" button in Hotkeys window | Hotkeys dialog closed|
 |6. Select the Ribon in the main window | Ribon selected |
-|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips | 
-|8. Find hotkey from step 3 in the registry | new hotkey from step 3 seved in registry |
+|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips displayed | 
+|8. Enter hotkey from step 3 in the main window | command from step 2 was called |
+|9. Find hotkey from step 3 in the registry | new hotkey from step 3 saved in registry |
 
-
-
-
-    - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
-    - New hotkeys commands must be saved
-    - New hotkeys commands recorded in the registry
-8.  Closing Hotkeys window
-    - ОК button
-        - closes the dialog
-        - applies all the changes
-    - Cancel button
-        - closes the dialog
-        - does not make any change to commands hotkeys 
-9.	After the hotkeys are changed using the dialog
-    - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
-    - New hotkeys commands must be saved
-    - New hotkeys commands recorded in the registry
-
+### Test case #8.1 Closing Hotkeys window Cancel button
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
+|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
+|4. Select another command in the commansd list | last entered hotkey saved |
+|5. Click "Close" button in Hotkeys window | Hotkeys dialog closed |
+|6. Select the Ribon in the main window | Ribon selected |
+|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips not displayed | 
+|8. Enter hotkey from step 3 in the main window | command from step 2 was not called |
+|9. Find hotkey from step 3 in the registry | new hotkey from step 3 was not saved in registry |

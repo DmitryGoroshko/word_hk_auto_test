@@ -50,7 +50,6 @@ test task for auto test Word app for hot key module
 ## Case test
 
 | Syntax | Description |
-|sdsdsdsdf|
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |

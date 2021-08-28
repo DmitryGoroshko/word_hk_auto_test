@@ -42,8 +42,8 @@ test task for auto test Word app for hot key module
     - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
     - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
     - Selecting another command in the list will store the entered hotkeys
-8.	Message box:
     - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
+8.  Closing Hotkeys window
     - ОК button
         - closes the dialog
         - applies all the changes
@@ -158,7 +158,7 @@ test task for auto test Word app for hot key module
 |3. Click to the command name in comands list | the command cell is highlighted, Information area includes the command name in **bold** and the command description |
 |4. Is command description as in the command tooltip on the Ribbon | yes |
 
-### Test case #7 Command selection, add new hotkey combination
+### Test case #7.1 Command selection, add new hotkey combination
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog opened |
@@ -171,17 +171,45 @@ test task for auto test Word app for hot key module
 |8. Select previous command again | the command cell is highlighted |
 |9. Press Backspace keyboard button | all hotkey combination cleared |
 
-### Test case #8 Message box
+### Test case #7.2 Message box "combination is already used by another command"
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog opened |
 |2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
-|6. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
+|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
+|4. Select another command in the commansd list | last entered hotkey saved |
+|5. Enter the same hotkey combination | a message box will appear, asking if the combination should be reassigned |
+|6. Click to the "Cancel" button in message box | the hotkey combination not saved |
+|7. Enter the same hotkey combination | a message box will appear, asking if the combination should be reassigned |
+|8. Click to the "OK" button in message box | the hotkey combination saved |
 
-    - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.
+### Test case #8.1 Closing Hotkeys window ОК button
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
+|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
+|4. Select another command in the commansd list | last entered hotkey saved |
+|5. Click "OK" button in Hotkeys window | Hotkeys dialog closed|
+|6. Select the Ribon in the main window | Ribon selected |
+|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips | 
+|8. Find hotkey from step 3 in the registry | new hotkey from step 3 seved in registry |
+
+
+
+
+    - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
+    - New hotkeys commands must be saved
+    - New hotkeys commands recorded in the registry
+8.  Closing Hotkeys window
     - ОК button
         - closes the dialog
         - applies all the changes
     - Cancel button
         - closes the dialog
         - does not make any change to commands hotkeys 
+9.	After the hotkeys are changed using the dialog
+    - corresponding Ribbon tooltips are updated to reflect the changed hotkeys
+    - New hotkeys commands must be saved
+    - New hotkeys commands recorded in the registry
+

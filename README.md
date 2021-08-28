@@ -24,7 +24,7 @@ test task for auto test Word app for hot key module
     - ‘+’/’-’ Button located to the left of the group name
     - expanded with the ‘+’ Button
     - contracted with the ‘-’ Button
-5.  Commands list scroll bar
+5.  Commands list scroll bar:
     - mouse click
     - mouse scroll
     - keyboard Up Down
@@ -116,11 +116,6 @@ test task for auto test Word app for hot key module
 |5. Is command names in the commands list same as on the Ribbon | yes | 
 |6. Is command group names in the commands list same as the Ribbon tabs | yes |
 
-4.	Commands group:
-    - expanded with the ‘+’ Button
-    - contracted with the ‘-’ Button
-    - clicking will select a command.
-
 ### Test case #4 Commands group
 | Test Steps | Expected Result |
 | ----------- | ----------- |
@@ -131,4 +126,32 @@ test task for auto test Word app for hot key module
 |5. Press '+' Button to the left of the group name | Command groups expanded |
 |6. Is the '+' Button changed to '-' Button?    | yes |
 
+### Test case #5 Commands list scroll bar
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. Move to Commands list scroll bar | - |
+|3. Move mouse coursor to the "V" button | - |
+|4. Click to the "V" button | Commands list scrolling down |
+|5. Move mouse coursor to the "^" button | - |
+|6. Click to the "^" button | Commands list scrolling up |
+|7. Move mouse coursor to the scroll bar button | - |
+|8. Press left mouse and move down | Commands list scrolling down |
+|9. Move mouse up | Commands list scrolling up |
+|10. release the left mouse button | - |
+|11. Set focus to the commands list | - |
+|12. scroll down with the mouse wheel | Commands list scrolling down |
+|13. scroll up with the mouse wheel | Commands list scrolling up |
+|14. Set focus to the commands list | - |
+|15. press and release the down key on the keyboard | Commands list scrolling down |
+|16. press and release the up key on the keyboard | Commands list scrolling up |
+|17. press and release the PgDn key on the keyboard | Commands list scrolling down |
+|18. press and release the PgUp on the keyboard | Commands list scrolling up |
+|19. press and release the End key on the keyboard | Commands list scrolling to bottom |
+|20. press and release the PgUp on the keyboard | Commands list scrolling to top |
 
+
+
+    - keyboard Up Down
+    - keyboard PageUp PageDown
+    - keyboard Home End

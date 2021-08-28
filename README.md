@@ -150,8 +150,23 @@ test task for auto test Word app for hot key module
 |19. press and release the End key on the keyboard | Commands list scrolling to bottom |
 |20. press and release the PgUp on the keyboard | Commands list scrolling to top |
 
+### Test case #6 Information about the selected command
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. Is information area located under the commands list | yes |
+|3. Click to the command name in comands list | command selected, Information area includes the command name in **bold** and the command description |
+|4. Is command description as in the command tooltip on the Ribbon | yes |
 
+### Test case #7 Command selection
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|2. 
 
-    - keyboard Up Down
-    - keyboard PageUp PageDown
-    - keyboard Home End
+Clicking will select a command
+Hotkeys of the selected command can be modified
+Backspace keyboard button remove all existing hotkeys
+Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
+Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
+Selecting another command in the list will store the entered hotkeys

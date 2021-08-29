@@ -1,5 +1,6 @@
 # Word hotkey auto test
 Test task: 'Create auto test using Python for 1 test case. Use for example ‘Word’ application to test your autotest versus.' 
+
 This is auto test for Word application (hot key module).  
 
 ## Python auto test program description
@@ -202,19 +203,33 @@ As far as I was able to find out, this application accepts the following combina
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
 |2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
-|3. Enter one of hotkey combination "Ctrl" + [a...z]                                    | hotkey combination added to the right column in front of command name |
+|3. Enter one of hotkey combination "Ctrl" + one of [a...z]                             | hotkey combination added to the right column in front of command name |
 |4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
 |5. Select another command in the commansd list                                         | last entered hotkey saved |
 |6. Select previous command again                                                       | the command cell is highlighted |
 |7. Enter new hotkey combination                                                        | hotkey combination added to the right column in front of command name |
-|8. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination
+|8. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination and saved |
+|9. Check if two hotkey combination are for the same command                            | two hotkey combination are for the same command |
+|10. Select previous command in the commansd list again                                 | the command cell is highlighted |
+|10. Press "Backspace" keyboard button                                                  | all hotkey combination for this command cleared |
 
-|9. Check if two hotkey combination  for the one command |
+### Test case #7.2 Command list add new correct hotkey 
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|3. Enter hotkey combination "Ctrl" + "Shift" + "A"                                     | hotkey combination added to the right column in front of command name |
+|4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard "Ctrl+Shift+A" |
+|5. Select another command in the commansd list                                         | last entered hotkey saved |
+|6. Select previous command again                                                       | the command cell is highlighted |
+|7. Enter hotkey combination "Ctrl" + "Shift" + "Z"                                     | hotkey combination added to the right column in front of command name |
+|8. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard "Ctrl+Shift+Z"|
+|9. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination and saved |
+|10. Check if two hotkey combination are for the same command                           | two hotkey combination are for the same command "Ctrl+Shift+A" and "Ctrl+Shift+Z" |
+|11. Select previous command in the commansd list again                                 | the command cell is highlighted |
+|12. Press "Backspace" keyboard button                                                  | all hotkey combination for this command cleared |
 
-|9. Select previous command in the commansd list again                      | the command cell is highlighted |
-|10. Press "Backspace" keyboard button                                      | all hotkey combination for this command cleared |
-
-### Test case #7.2 Message box "combination is already used by another command"
+### Test case #7.3 Command list add already used hotkey
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
@@ -225,6 +240,41 @@ As far as I was able to find out, this application accepts the following combina
 |6. Click to the "Cancel" button in message box | the hotkey combination not saved |
 |7. Enter the same hotkey combination | a message box will appear, asking if the combination should be reassigned |
 |8. Click to the "OK" button in message box | the hotkey combination saved |
+
+### Test case #7.3 Command list try to add system hotkey 
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|3. Enter hotkey combination "Ctrl" + "Esc"                                             | hotkey combination not added. Windows Star menu opened. Focus changed |
+|4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|5. Enter hotkey combination "Alt" + "Space"                                            | hotkey combination not added. Standard Windows context menu of the dialog opened |
+
+### Test case #7.4 Command list try to add incorrect hotkey 
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|3. Enter hotkey combination "E" + "4"                                                  | hotkey combination not recognized, not added |
+|4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|5. Enter hotkey combination "P" + "-"                                                  | hotkey combination not recognized, not added |
+
+### Test case #7.5 Command list try to add correct hotkey advanced combinations 
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|3. Enter hotkey combination "E" + "4"                                                  | hotkey combination not recognized, not added |
+
+
+
+
+
+
+
+
+
+
 
 ### Test case #8.1 Closing Hotkeys window ОК button
 | Test Steps | Expected Result |

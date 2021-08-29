@@ -264,7 +264,22 @@ As far as I was able to find out, this application accepts the following combina
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
 |2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
-|3. Enter hotkey combination "Ctrl" + "A"                                               | hotkey combination not recognized, not added |
+|3. Enter hotkey combination "Ctrl" + "A"                                               | hotkey combination added to the right column in front of command name |
+|4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
+|5. Repeat typing hotkey combination "Ctrl" + key from the set: ['A','Z','1','0','F1','F12','Num0', 'Num9','-','.','Up','Del','Backspace'] | hotkey combination added to the right column in front of command name |
+|6. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -3,18 +3,51 @@ Test task: auto test Word app for hot key module
 
 ## Python auto test program description
 ### About the program
-This python script is autotest fot MS Word appliction hotkey module. It's generate all possiple hot key combinations, type and check recognition. 
+This python script is autotest fot MS Word appliction hotkey module. 
+It's generate all possiple hot key combinations, type and check recognition. 
 
 ### System requirements
 My configuration:
-- Windows 10 64-bit
-- MS Office ProfessionalPlus 2019 Word 2102 build 13801.20864 32-bit
+- Windows 10 64-bit RUS
+- MS Office ProfessionalPlus 2019 Word 2102 build 13801.20864 32-bit RUS
 - PyCharm 2021.2 (Community Edition 64-bit) 
 - Python 3.9.5
 
 ### Pre-conditions 
-pywinauto lib
-please start your default browser before starting the script (beause of the Shift+F1 hotkey)
+- pywinauto lib
+- please start your default browser before starting the script (beause of the Shift+F1 hotkey)
+- make sure you have the English keyboard layout
+
+### How it works?
+| Test Steps | Expected Result |
+| ----------- | ----------- |
+|1.	make sure that the scene closed | scene closed |
+
+
+| # | Alt | Ctrl | Shift | Shift | B | Code|
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 |  |  |  |  | 10000|
+| 2 | 1 |  |  |  | 1 | 10001|
+| 3 | 1 |  |  | 1 | 1 | 10011|
+| 4 | 1 |  | 1 |  |  | 10100|
+| 5 | 1 |  | 1 |  | 1 | 10101|
+| 6 | 1 |  | 1 | 1 | 1 | 10111|
+| 7 |  | 1 |  |  |  | 01000|
+| 8 |  | 1 |  |  | 1 | 01001|
+| 9 |  | 1 |  | 1 | 1 | 01011|
+| 10 |  | 1 | 1 |  |  | 01100|
+| 11 |  | 1 | 1 |  | 1 | 01101|
+| 12 |  | 1 | 1 | 1 | 1 | 01111|
+| 13 | 1 | 1 |  |  |  | 11000|
+| 14 | 1 | 1 |  |  | 1 | 11001|
+| 15 | 1 | 1 |  | 1 | 1 | 11011|
+| 16 | 1 | 1 | 1 |  |  | 11100|
+| 17 | 1 | 1 | 1 |  | 1 | 11101|
+| 18 | 1 | 1 | 1 | 1 | 1 | 11111|
+| 19 |  |  | 1 |  |  | 00100|
+| 20 |  |  | 1 |  | 1 | 00101|
+| 21 |  |  | 1 | 1 | 1 | 00111|
+
 
 ## Сheck list:
 1.  Is Hotkeys a dialog modal:

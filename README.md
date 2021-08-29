@@ -1,5 +1,6 @@
 # Word hotkey auto test
-Test task: auto test Word app for hot key module
+Test task: 'Create auto test using Python for 1 test case. Use for example ‘Word’ application to test your autotest versus.' 
+This is auto test for Word application (hot key module).  
 
 ## Python auto test program description
 ### About the program
@@ -19,8 +20,8 @@ My configuration:
 - make sure you have the English keyboard layout
 
 ### How it works?
-
-
+I did a little research on keyboard hotkey for the Word application.
+As far as I was able to find out, this application accepts the following combinations as hot keys:
 
 | # | Alt | Ctrl | Shift | Shift | B | Code|
 | --- | --- | --- | --- | --- | --- | --- |

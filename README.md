@@ -47,6 +47,7 @@ As far as I was able to find out, this application accepts the following combina
 | 20 |  |  | 1 |  | 1 | **00101**|
 | 21 |  |  | 1 | 1 | 1 | **00111**|
 
+===============================================================================
 
 ## Сheck list:
 1.  Is Hotkeys a dialog modal:
@@ -106,6 +107,8 @@ As far as I was able to find out, this application accepts the following combina
 **Pre-conditions:**
 1.	OS required for the tested application.
 2.	Launch the application.
+
+Check if checkbox exists. EXPECTED: checkbox exists
 
 ### Test case #1.1 Hotkeys dialog modal (scene closed)
 | Test Steps | Expected Result |

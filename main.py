@@ -3,11 +3,14 @@ import win32api
 import pywinauto
 from pywinauto.application import Application
 
+import helper
+helper.hello_hk()
+
+
 win32api.LoadKeyboardLayout("00000409", 1)  # ENG
 start_time = time.time()
 
 # launch the Word application
-
 app = Application(backend="uia").start("C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
                                        timeout=3)
 # Word main window
@@ -17,13 +20,14 @@ word_main_window.wait('visible')
 # navigation on "File" tab
 pywinauto.keyboard.send_keys("{TAB 5}{UP}{ENTER}")
 
-# Word settings window
-word_parametr_window = word_main_window.ПараметрыWord
-word_parametr_window.wait('visible')
+# Word Options window
+word_parameter_window = word_main_window.WordOptions
+word_parameter_window.wait('visible')
 
-# navigation "Word settings -> Ribbon settings -> Settings "
+# navigation "Word Options -> Customize Ribbon -> Customize "
 pywinauto.keyboard.send_keys("{DOWN 7}{TAB 3}{ENTER}")
-word_keyboard_set_window = word_parametr_window.НастройкаКлавиатуры
+word_keyboard_set_window = word_parameter_window.CustomizeKeyboard
+
 word_keyboard_set_window.wait('visible')
 word_keyboard_set_window_wr = word_keyboard_set_window.wrapper_object()
 
@@ -35,10 +39,10 @@ new_hk_edit = word_keyboard_set_window.Edit2.wrapper_object()
 new_hk_edit.draw_outline()
 
 # "Apply" Button wrapper
-apply_button = word_keyboard_set_window.НазначитьButton.wrapper_object()
+apply_button = word_keyboard_set_window.AssignButton.wrapper_object()
 
-# alphabet for hotkey combinations
-# first pos - VK, second - visualisation in Word, third - shift visualisation "Shift + 1" or "!" for ex.
+""" abc_list: alphabet for hotkey combinations
+first pos - VK, second - visualisation in Word, third - shift visualisation "Shift + 1" or "!" for ex."""
 abc_list = [['A', 'A'],
             ['B', 'B'],
             ['C', 'C'],
@@ -66,16 +70,16 @@ abc_list = [['A', 'A'],
             ['Y', 'Y'],
             ['Z', 'Z']]
 
-num_list = [['1', '1', '!'],
-            #            ['2', '2', '@'],
-            #            ['3', '3', '#'],
-            #            ['4', '4', '$'],
-            #            ['5', '5', '{%}'],
-            #            ['6', '6', '{^}'],
-            #            ['7', '7', '&'],
-            #            ['8', '8', '*'],
-            #            ['9', '9', '('],
-            ['0', '0', ')']]
+num_list = [['1', '1', '!']]#,
+            # ['2', '2', '@'],
+            # ['3', '3', '#'],
+            # ['4', '4', '$'],
+            # ['5', '5', '{%}'],
+            # ['6', '6', '{^}'],
+            # ['7', '7', '&'],
+            # ['8', '8', '*'],
+            # ['9', '9', '('],
+            #['0', '0', ')']]
 
 func_list = [['{F1}', 'F1'],
              ['{F2}', 'F2'],
@@ -105,7 +109,7 @@ num_pad_list = [['{VK_NUMPAD0}', 'Num 0'],
                 ['{VK_DIVIDE}', 'Num /'],
                 ['{VK_MULTIPLY}', 'Num *']]
 
-simbols_list = [[',', ',', '<'],
+symbols_list = [[',', ',', '<'],
                 ['.', '.', '>'],
                 ['/', '/', '?'],
                 [';', ';', ':'],
@@ -117,21 +121,35 @@ simbols_list = [[',', ',', '<'],
                 ['=', '=', '+'],
                 ['`', '`', '{~}']]
 
-spec_simb_list = [['{BACKSPACE}', 'Backspace'],
-                  ['{SPACE}', 'Пробел'],
-                  ['{ENTER}', 'Return'],
-                  ['{VK_UP}', 'Стрелка вверх'],
-                  ['{VK_RIGHT}', 'Стрелка вправо'],
-                  ['{DOWN}', 'Стрелка вниз'],
-                  ['{LEFT}', 'Стрелка влево'],
-                  ['{HOME}', 'Home'],
-                  ['{END}', 'End'],
-                  ['{PGUP}', 'PgUp'],
-                  ['{PGDN}', 'PgDn'],
-                  ['{INS}', 'Ins'],
-                  ['{DEL}', 'Del'],
-                  ['{SCROLLLOCK}', 'Scroll Lock'],
-                  ['{VK_LWIN}', 'WinKey']]
+spec_symbols_alphabet = [['{BACKSPACE}', 'Backspace'],
+                         ['{SPACE}', 'Space'],
+                         ['{ENTER}', 'Return'],
+                         ['{VK_UP}', 'Up'],
+                         ['{VK_RIGHT}', 'Right'],
+                         ['{DOWN}', 'Down'],
+                         ['{LEFT}', 'Left'],
+                         ['{HOME}', 'Home'],
+                         ['{END}', 'End'],
+                         ['{PGUP}', 'Page Up'],
+                         ['{PGDN}', 'Page Down'],
+                         ['{INS}', 'Insert'],
+                         ['{DEL}', 'Del'],
+                         ['{SCROLLLOCK}', 'Scroll Lock'],
+                         ['{VK_LWIN}', 'WinKey']]
+
+special_set_list = [['A', 'A'],
+                    ['Z', 'Z'],
+                    ['1', '1', '!'],
+                    ['0', '0', ')'],
+                    ['{F1}', 'F1'],
+                    ['{F12}', 'F12'],
+                    ['{VK_NUMPAD0}', 'Num 0'],
+                    ['{VK_NUMPAD9}', 'Num 9'],
+                    ['-', '-', '_'],
+                    ['.', '.', '>'],
+                    ['{VK_UP}', 'Up'],
+                    ['{DEL}', 'Del'],
+                    ['{BACKSPACE}', 'Backspace']]
 
 # code for all possible combination Alt+Ctrl+Shift+a_ABC,Shift+b_ABC
 code_list = ['10000',
@@ -157,13 +175,13 @@ code_list = ['10000',
              '00111']
 
 # commented because the alphabet is too large and it will take about 60 hours to run through all combination
-# alphavit_list = abc_list
-# alphavit_list.extend(num_list)
-# alphavit_list.extend(spec_simb_list)
-# alphavit_list.extend(func_list)
-# alphavit_list.extend(simbols_list)
-# alphavit_list.extend(num_pad_list)
-alphavit_list = num_list
+#alphabet_list = abc_list
+#alphabet_list.extend(num_list)
+#alphabet_list.extend(spec_symbols_alphabet)
+#alphabet_list.extend(func_list)
+#alphabet_list.extend(symbols_list)
+#alphabet_list.extend(num_pad_list)
+alphabet_list = special_set_list
 
 
 result_list = [["Typed", "Recognized", "Result"]]
@@ -177,9 +195,9 @@ def clear_current_hotkey():
         word_current_hotkey_listBox.type_keys("{UP}{ENTER}")
 
 
-# function for printing result list
+""" def print_list(input_list, err): function for printing result list
 # second param. 1 - only Error
-# second param. 0 - all
+# second param. 0 - all"""
 def print_list(input_list, err):
     for a in range(len(input_list)):
         if ((err == 1) and (input_list[a][2] == 'Error')) or (err == 0):
@@ -307,18 +325,19 @@ clear_current_hotkey()
 
 # main loop of the program, run through all possible key combinations
 for i_ctrl in range(len(code_list)):
+
     # does b ABC block exist
     if decode_b(code_list[i_ctrl]) == 0:
         b_abc_block_len = 1
     else:
-        b_abc_block_len = len(alphavit_list)
+        b_abc_block_len = len(alphabet_list)
 
     # a ABC block
-    for i_alph in range(len(alphavit_list)):
+    for i_alph in range(len(alphabet_list)):
 
         # b ABC block
         for j_alph in range(b_abc_block_len):
-            current_comb_list = decode_ctrl(code_list[i_ctrl], alphavit_list[i_alph], alphavit_list[j_alph])
+            current_comb_list = decode_ctrl(code_list[i_ctrl], alphabet_list[i_alph], alphabet_list[j_alph])
             # print(current_comb_list)
 
             # typing hotkey

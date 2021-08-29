@@ -175,11 +175,11 @@ As far as I was able to find out, this application accepts the following combina
 |7. Move mouse coursor to the scroll bar element                        | mouse coursor to the scroll bar element |
 |8. Press left mouse and move down                                      | Commands list scrolling down |
 |9. Move mouse up                                                       | Commands list scrolling up |
-|10. release the left mouse button                                      | - |
-|11. Set focus to the commands list                                     | - |
+|10. release the left mouse button                                      | nothing happened |
+|11. Set focus to the commands list                                     | the command cell is highlighted |
 |12. scroll down with the mouse wheel                                   | Commands list scrolling down |
 |13. scroll up with the mouse wheel                                     | Commands list scrolling up |
-|14. Set focus to the commands list                                     | - |
+|14. Set focus to the commands list                                     | the command cell is highlighted |
 |15. press and release the "Down" key on the keyboard                   | Commands list scrolling down |
 |16. press and release the "Up" key on the keyboard                     | Commands list scrolling up |
 |17. press and release the "PgDn" key on the keyboard                   | Commands list scrolling down |
@@ -190,10 +190,12 @@ As far as I was able to find out, this application accepts the following combina
 ### Test case #6 Information about the selected command
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
-|2. Is information area located under the commands list | yes |
-|3. Click to the command name in comands list | the command cell is highlighted, Information area includes the command name in **bold** and the command description |
-|4. Is command description as in the command tooltip on the Ribbon | yes |
+|1.	Open Hotkeys dialog                                                 | Hotkeys dialog window opened |
+|2. Check if information area located under the commands list           | nformation area located under the commands list |
+|3. Click to the command name in comands list                           | the command cell is highlighted | 
+|4. Check if Information area includes the command name in **bold**     | Information area includes the command name in **bold** |
+|5. Check if Information area includes the command  description         | Information area includes the command  description |
+|6. Check if command description as in the command tooltip on the Ribbon| command description as in the command tooltip on the Ribbon |
 
 ### Test case #7.1 Command selection, add new hotkey combination
 | Test Steps | Expected Result |

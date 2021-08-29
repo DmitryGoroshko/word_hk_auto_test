@@ -1,5 +1,5 @@
 # Word hotkey auto test
-Test task for auto test Word app for hot key module
+Test task: auto test Word app for hot key module
 
 ## Python auto test program description
 ### About the program

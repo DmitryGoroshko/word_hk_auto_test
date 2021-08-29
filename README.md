@@ -259,7 +259,7 @@ As far as I was able to find out, this application accepts the following combina
 |4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
 |5. Enter hotkey combination "P" + "-"                                                  | hotkey combination not recognized, not added |
 
-### Test case #7.5.1 Command list try to add correct hotkey advanced combinations "Ctrl" + ABC
+### Test case #7.5.1 Command list try to add correct hotkey advanced combinations "Ctrl..." + ABC
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
@@ -268,61 +268,30 @@ As far as I was able to find out, this application accepts the following combina
 |4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
 |5. Repeat typing hotkey combination "Ctrl" + key from the set: ['A','Z','1','0','F1','F12','Num0', 'Num9','-','.','Up','Del','Backspace'] | Hotkey combination added to the right column in front of command name |
 |6. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
-
-### Test case #7.5.2 Command list try to add correct hotkey advanced combinations "Alt" + ABC
-| Test Steps | Expected Result |
-| ----------- | ----------- |
-|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | The command cell is highlighted |
-|3. Enter hotkey combination "Alt" + "A"                                               | Hotkey combination added to the right column in front of command name |
-|4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
-|5. Repeat typing hotkey combination "Alt" + key from the set: ['A','Z','1','0','F1','F12','Num0', 'Num9','-','.','Up','Del','Backspace'] | Hotkey combination added to the right column in front of command name |
-|6. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+|7. *Repeat step 5 for all hot key combination (Alt, Ctrl, Shift) + key from the set: ['A','Z','1','0','F1','F12','Num0', 'Num9','-','.','Up','Del','Backspace'] Since It will be a lot of combinations (21 * 13 = 273). It would be better to automate this test. We will describe in more detail all possible combinations and relevant values in the autotest|  Recognized key combination match with the typed from the keyboard |
 
 ### Test case #8.1 Closing Hotkeys window ОК button
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
-|2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
-|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
-|4. Select another command in the commansd list | last entered hotkey saved |
-|5. Click "OK" button in Hotkeys window | Hotkeys dialog closed|
-|6. Select the Ribon in the main window | Ribon selected |
-|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips displayed | 
-|8. Enter hotkey from step 3 in the main window | command from step 2 was called |
-|9. Find hotkey from step 3 in the registry | new hotkey from step 3 saved in registry |
+|1.	Open Hotkeys dialog                                                                     | Hotkeys dialog window opened |
+|2. Click to the command (remember it) name without hot key combination in commands list    | the command cell is highlighted |
+|3. Enter new hotkey combination                                                            | hotkey combination added to the right column in front of command name |
+|4. Select another command in the commansd list                                             | last entered hotkey saved |
+|5. Click "OK" button in Hotkeys window                                                     | Hotkeys dialog closed|
+|6. Select the Ribon in the main window                                                     | Ribon selected |
+|7. Find command from step 2 on the Ribbon, set mouse focus                                 | new hotkey from step 3 in Ribbon tooltips displayed | 
+|8. Enter hotkey from step 3 in the main window                                             | command from step 2 was called |
+|9. Find hotkey from step 3 in the registry                                                 | new hotkey from step 3 saved in registry |
 
 ### Test case #8.2 Closing Hotkeys window Cancel button
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
-|2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
-|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
-|4. Select another command in the commansd list | last entered hotkey saved |
-|5. Click "Close" button in Hotkeys window | Hotkeys dialog closed |
-|6. Select the Ribon in the main window | Ribon selected |
-|7. Find command from step 2 on the Ribbon, set mouse focus | new hotkey from step 3 in Ribbon tooltips not displayed | 
-|8. Enter hotkey from step 3 in the main window | command from step 2 was not called |
-|9. Find hotkey from step 3 in the registry | new hotkey from step 3 was not saved in registry |
+|1.	Open Hotkeys dialog                                                                     | Hotkeys dialog window opened |
+|2. Click to the command (remember it) name without hot key combination in commands list    | the command cell is highlighted |
+|3. Enter new hotkey combination                                                            | hotkey combination added to the right column in front of command name |
+|4. Select another command in the commansd list                                             | last entered hotkey saved |
+|5. Click "Close" button in Hotkeys window                                                  | Hotkeys dialog closed |
+|6. Select the Ribon in the main window                                                     | Ribon selected |
+|7. Find command from step 2 on the Ribbon, set mouse focus                                 | new hotkey from step 3 in Ribbon tooltips not displayed | 
+|8. Enter hotkey from step 3 in the main window                                             | command from step 2 was not called |
+|9. Find hotkey from step 3 in the registry                                                 | new hotkey from step 3 was not saved in registry |

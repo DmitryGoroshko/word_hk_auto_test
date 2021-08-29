@@ -232,14 +232,14 @@ As far as I was able to find out, this application accepts the following combina
 ### Test case #7.3 Command list add already used hotkey
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
-|2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
-|3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
-|4. Select another command in the commansd list | last entered hotkey saved |
-|5. Enter the same hotkey combination | a message box will appear, asking if the combination should be reassigned |
-|6. Click to the "Cancel" button in message box | the hotkey combination not saved |
-|7. Enter the same hotkey combination | a message box will appear, asking if the combination should be reassigned |
-|8. Click to the "OK" button in message box | the hotkey combination saved |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name without hot key combination in commands list              | the command cell is highlighted |
+|3. Enter new hotkey combination "Alt" + "F"                                            | hotkey combination  "Alt" + "F"  added to the right column in front of command name |
+|4. Select another command in the commansd list                                         | last entered hotkey saved |
+|5. Enter the same hotkey combination "Alt" + "F"                                       | a message box will appear, asking if the combination should be reassigned |
+|6. Click to the "Cancel" button in message box                                         | the hotkey combination not saved |
+|7. Enter the same hotkey combination "Alt" + "F"                                       | a message box will appear, asking if the combination should be reassigned |
+|8. Click to the "OK" button in message box                                             | the hotkey combination "Alt" + "F" saved |
 
 ### Test case #7.3 Command list try to add system hotkey 
 | Test Steps | Expected Result |
@@ -259,12 +259,12 @@ As far as I was able to find out, this application accepts the following combina
 |4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
 |5. Enter hotkey combination "P" + "-"                                                  | hotkey combination not recognized, not added |
 
-### Test case #7.5 Command list try to add correct hotkey advanced combinations 
+### Test case #7.5.1 Command list try to add correct hotkey advanced combinations "Ctrl" + ABC
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
 |2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
-|3. Enter hotkey combination "E" + "4"                                                  | hotkey combination not recognized, not added |
+|3. Enter hotkey combination "Ctrl" + "A"                                               | hotkey combination not recognized, not added |
 
 
 

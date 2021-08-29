@@ -25,27 +25,27 @@ As far as I was able to find out, this application accepts the following combina
 
 | # | Alt | Ctrl | Shift | Shift | B | Code|
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 1 |  |  |  |  | **10000**|
-| 2 | 1 |  |  |  | 1 | **10001**|
-| 3 | 1 |  |  | 1 | 1 | **10011**|
-| 4 | 1 |  | 1 |  |  | **10100**|
-| 5 | 1 |  | 1 |  | 1 | **10101**|
-| 6 | 1 |  | 1 | 1 | 1 | **10111**|
-| 7 |  | 1 |  |  |  | **01000**|
-| 8 |  | 1 |  |  | 1 | **01001**|
-| 9 |  | 1 |  | 1 | 1 | **01011**|
-| 10 |  | 1 | 1 |  |  | **01100**|
-| 11 |  | 1 | 1 |  | 1 | **01101**|
-| 12 |  | 1 | 1 | 1 | 1 | **01111**|
-| 13 | 1 | 1 |  |  |  | **11000**|
-| 14 | 1 | 1 |  |  | 1 | **11001**|
-| 15 | 1 | 1 |  | 1 | 1 | **11011**|
-| 16 | 1 | 1 | 1 |  |  | **11100**|
-| 17 | 1 | 1 | 1 |  | 1 | **11101**|
+| 1  | 1 |   |   |   |   | **10000**|
+| 2  | 1 |   |   |   | 1 | **10001**|
+| 3  | 1 |   |   | 1 | 1 | **10011**|
+| 4  | 1 |   | 1 |   |   | **10100**|
+| 5  | 1 |   | 1 |   | 1 | **10101**|
+| 6  | 1 |   | 1 | 1 | 1 | **10111**|
+| 7  |   | 1 |   |   |   | **01000**|
+| 8  |   | 1 |   |   | 1 | **01001**|
+| 9  |   | 1 |   | 1 | 1 | **01011**|
+| 10 |   | 1 | 1 |   |   | **01100**|
+| 11 |   | 1 | 1 |   | 1 | **01101**|
+| 12 |   | 1 | 1 | 1 | 1 | **01111**|
+| 13 | 1 | 1 |   |   |   | **11000**|
+| 14 | 1 | 1 |   |   | 1 | **11001**|
+| 15 | 1 | 1 |   | 1 | 1 | **11011**|
+| 16 | 1 | 1 | 1 |   |   | **11100**|
+| 17 | 1 | 1 | 1 |   | 1 | **11101**|
 | 18 | 1 | 1 | 1 | 1 | 1 | **11111**|
-| 19 |  |  | 1 |  |  | **00100**|
-| 20 |  |  | 1 |  | 1 | **00101**|
-| 21 |  |  | 1 | 1 | 1 | **00111**|
+| 19 |   |   | 1 |   |   | **00100**|
+| 20 |   |   | 1 |   | 1 | **00101**|
+| 21 |   |   | 1 | 1 | 1 | **00111**|
 
 ===============================================================================
 
@@ -197,18 +197,22 @@ As far as I was able to find out, this application accepts the following combina
 |5. Check if Information area includes the command  description         | Information area includes the command  description |
 |6. Check if command description as in the command tooltip on the Ribbon| command description as in the command tooltip on the Ribbon |
 
-### Test case #7.1 Command selection, add new hotkey combination
+### Test case #7.1 Command selection, add and save new hotkey, clear current hotkey
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
-|2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
-|3. Enter all allpossible hotkey combination | hotkey combination added to the right column in front of command name. Recognized key combination must match with the entered from the keyboard| 
-|4. Select another command in the commansd list | last entered hotkey saved |
-|5. Select previous command again | the command cell is highlighted |
-|6. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
-|7. Select another command in the commansd list | last entered hotkey added to the hotkey combination. Two hotkey combination for the one command |
-|8. Select previous command again | the command cell is highlighted |
-|9. Press Backspace keyboard button | all hotkey combination cleared |
+|1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
+|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|3. Enter one of hotkey combination "Ctrl" + [a...z]                                    | hotkey combination added to the right column in front of command name |
+|4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
+|5. Select another command in the commansd list                                         | last entered hotkey saved |
+|6. Select previous command again                                                       | the command cell is highlighted |
+|7. Enter new hotkey combination                                                        | hotkey combination added to the right column in front of command name |
+|8. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination
+
+|9. Check if two hotkey combination  for the one command |
+
+|9. Select previous command in the commansd list again                      | the command cell is highlighted |
+|10. Press "Backspace" keyboard button                                      | all hotkey combination for this command cleared |
 
 ### Test case #7.2 Message box "combination is already used by another command"
 | Test Steps | Expected Result |

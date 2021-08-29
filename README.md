@@ -108,78 +108,65 @@ As far as I was able to find out, this application accepts the following combina
 1.	OS required for the tested application.
 2.	Launch the application.
 
-Check if checkbox exists. EXPECTED: checkbox exists
-
 ### Test case #1.1 Hotkeys dialog modal (scene closed)
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	make sure that the scene closed | scene closed |
-|2.	if not – close it | - |
-|3.	open Hotkeys dialog | Hotkeys dialog opened |
-|4.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | - |
-|4.1.	mouse click | application does not respond to actions |
-|4.2.	mouse double click | application does not respond to actions |
-|4.3.	mouse drug and drop test file from explorer to tested application | application does not respond to actions |
-|4.4.	keyboard input [a…z][1…0] | application does not respond to actions |
-|4.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
+|1.	make sure that the scene closed, if not – close it                                                          | scene closed                            |
+|2.	open Hotkeys dialog                                                                                         | Hotkeys dialog window opened            |
+|3.	make actions to parent application components (out from Hotkeys window, but inside parent application area) | -                                       |
+|3.1.	mouse click                                                                                             | application does not respond to actions |
+|3.2.	mouse double click                                                                                      | application does not respond to actions |
+|3.3.	mouse drug and drop test file from explorer to tested application                                       | application does not respond to actions |
+|3.4.	keyboard input [a…z][1…0]                                                                               | application does not respond to actions |
+|3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0)                                                    | application does not respond to actions |
 
 ### Test case #1.2 Hotkeys dialog modal (scene opened)
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	open the scene | scene opened |
-|2.	open Hotkeys dialog | Hotkeys dialog opened |
+|1.	open the scene                                                                      | scene opened |
+|2.	open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
 |3.	make actions to scene (out from Hotkeys window, but inside parent application area) | scene are not enable does not respond to actions |
-|3.1.	mouse click | application does not respond to actions |
-|3.2.	mouse double click | application does not respond to actions |
-|3.3.	mouse drug and drop test file from explorer to tested application | application does not respond to actions |
-|3.4.	keyboard input [a…z][1…0] | application does not respond to actions |
-|3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0) | application does not respond to actions |
+|3.1.	mouse click                                                                     | application does not respond to actions |
+|3.2.	mouse double click                                                              | application does not respond to actions |
+|3.3.	mouse drug and drop test file from explorer to tested application               | application does not respond to actions |
+|3.4.	keyboard input [a…z][1…0]                                                       | application does not respond to actions |
+|3.5.	type hotkey (Ctrl+E; Ctrl+А; Ctrl+5; Ctrl+6; Ctrl+0)                            | application does not respond to actions |
 
 ### Test case #2 GUI elements
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog| Hotkeys dialog opened |
-|2.	The title of the window dialog | "Hotkeys" |
-|3.	Does commands list exist? | yes |
-|4.	Does information area exist? | yes |
-|5.	Does button "OK" exist? | yes |
-|6.	Does button "Cancel" exist? | yes |
-|7. Resize window by mouse at the bottom right window corner | the window has not been resized |
+|1.	Open Hotkeys dialog                                         | Hotkeys dialog window opened |
+|2.	The title of the window dialog                              | "Hotkeys" |
+|3.	Check if commands list exists                               | commands list exists |
+|4.	Check if information area exists                            | information area exists  |
+|5.	Check if button "OK" exists                                 | button "OK" exists |
+|6.	Check if button "Cancel" exists                             | button "Cancel" exists |
+|7. Resize window by mouse at the bottom right window corner    | the window has not been resized |
 
 ### Test case #3 Commands list
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
-|2. Is Commands list divided into two columns?   | yes |
-|3. Does the left column represent command names?| yes |
-|4. Does the right column displays assigned hotkeys? | yes |
-|5. Is command names in the commands list same as on the Ribbon | yes | 
-|6. Is command group names in the commands list same as the Ribbon tabs | yes |
-
-### Test case #3 Commands list
-| Test Steps | Expected Result |
-| ----------- | ----------- |
-|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
-|2. Is Commands list divided into two columns?   | yes |
-|3. Does the left column represent command names?| yes |
-|4. Does the right column displays assigned hotkeys? | yes |
-|5. Is command names in the commands list same as on the Ribbon | yes | 
-|6. Is command group names in the commands list same as the Ribbon tabs | yes |
+|1.	Open Hotkeys dialog                                                         | Hotkeys dialog window opened |
+|2. Check if Commands list divided into two columns                             | Commands list divided into two columns |
+|3. Check if left column represent command names                                | left column represent command names |
+|4. Check if right column displays assigned hotkeys                             | right column displays assigned hotkeys |
+|5. Check if command names in the Commands list same as on the Ribbon           | command names in the Commands list same as on the Ribbon | 
+|6. Check if command group names in the Commands list same as the Ribbon tabs   | command group names in the Commands list same as the Ribbon tabs |
 
 ### Test case #4 Commands group
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog                          | Hotkeys dialog opened |
-|2. Is ‘+’/’-’ Button located to the left of the group name | yes |
-|3. Press '-' Button to the left of the group name          |  Command groups contracted |
-|4. Is the '-' Button changed to '+' Button?    | yes |
-|5. Press '+' Button to the left of the group name | Command groups expanded |
-|6. Is the '+' Button changed to '-' Button?    | yes |
+|1.	Open Hotkeys dialog                                             | Hotkeys dialog window opened |
+|2. Check if ‘+’/’-’ Button located to the left of the group name   | ‘+’/’-’ Button located to the left of the group name |
+|3. Press '-' Button to the left of the group name                  | Command groups contracted |
+|4. Check if '-' Button changed to '+' Button                       | '-' Button changed to '+' Button |
+|5. Press '+' Button to the left of the group name                  | Command groups expanded |
+|6. Check if '+' Button changed to '-' Button                       | '+' Button changed to '-' Button |
 
 ### Test case #5 Commands list scroll bar
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Move to Commands list scroll bar | - |
 |3. Move mouse coursor to the "V" button | - |
 |4. Click to the "V" button | Commands list scrolling down |
@@ -203,7 +190,7 @@ Check if checkbox exists. EXPECTED: checkbox exists
 ### Test case #6 Information about the selected command
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Is information area located under the commands list | yes |
 |3. Click to the command name in comands list | the command cell is highlighted, Information area includes the command name in **bold** and the command description |
 |4. Is command description as in the command tooltip on the Ribbon | yes |
@@ -211,7 +198,7 @@ Check if checkbox exists. EXPECTED: checkbox exists
 ### Test case #7.1 Command selection, add new hotkey combination
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
 |3. Enter all allpossible hotkey combination | hotkey combination added to the right column in front of command name. Recognized key combination must match with the entered from the keyboard| 
 |4. Select another command in the commansd list | last entered hotkey saved |
@@ -224,7 +211,7 @@ Check if checkbox exists. EXPECTED: checkbox exists
 ### Test case #7.2 Message box "combination is already used by another command"
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Click to the command name without hot key combination in commands list | the command cell is highlighted |
 |3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
 |4. Select another command in the commansd list | last entered hotkey saved |
@@ -236,7 +223,7 @@ Check if checkbox exists. EXPECTED: checkbox exists
 ### Test case #8.1 Closing Hotkeys window ОК button
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
 |3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
 |4. Select another command in the commansd list | last entered hotkey saved |
@@ -249,7 +236,7 @@ Check if checkbox exists. EXPECTED: checkbox exists
 ### Test case #8.2 Closing Hotkeys window Cancel button
 | Test Steps | Expected Result |
 | ----------- | ----------- |
-|1.	Open Hotkeys dialog   | Hotkeys dialog opened |
+|1.	Open Hotkeys dialog   | Hotkeys dialog window opened |
 |2. Click to the command (remember it) name without hot key combination in commands list | the command cell is highlighted |
 |3. Enter new hotkey combination | hotkey combination added to the right column in front of command name |
 |4. Select another command in the commansd list | last entered hotkey saved |

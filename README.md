@@ -259,7 +259,7 @@ As far as I was able to find out, this application accepts the following combina
 |4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
 |5. Enter hotkey combination "P" + "-"                                                  | hotkey combination not recognized, not added |
 
-### Test case #7.5.1 Command list try to add correct hotkey advanced combinations "Ctrl..." + ABC
+### Test case #7.5 Command list try to add correct hotkey advanced combinations "Ctrl..." + ABC
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |

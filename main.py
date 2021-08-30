@@ -2,359 +2,97 @@ import time
 import win32api
 import pywinauto
 from pywinauto.application import Application
-
-import helper
-helper.hello_hk()
+import hk_helper
 
 
-win32api.LoadKeyboardLayout("00000409", 1)  # ENG
-start_time = time.time()
+def word_hotkey_auto_test(input_data: list):
+    # launch the Word application
+    app = Application(backend="uia").start("C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+                                           timeout=3)
+    # Word main window
+    word_main_window = app.Word
+    # print(type(word_main_window))
+    word_main_window.wait('visible')
 
-# launch the Word application
-app = Application(backend="uia").start("C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
-                                       timeout=3)
-# Word main window
-word_main_window = app.Word
-word_main_window.wait('visible')
+    # navigation on "File" tab
+    pywinauto.keyboard.send_keys("{TAB 5}{UP}{ENTER}")
 
-# navigation on "File" tab
-pywinauto.keyboard.send_keys("{TAB 5}{UP}{ENTER}")
+    # Word Options window
+    word_parameter_window = word_main_window.WordOptions
+    word_parameter_window.wait('visible')
 
-# Word Options window
-word_parameter_window = word_main_window.WordOptions
-word_parameter_window.wait('visible')
+    # navigation "Word Options -> Customize Ribbon -> Customize "
+    pywinauto.keyboard.send_keys("{DOWN 7}{TAB 3}{ENTER}")
+    word_keyboard_set_window = word_parameter_window.CustomizeKeyboard
 
-# navigation "Word Options -> Customize Ribbon -> Customize "
-pywinauto.keyboard.send_keys("{DOWN 7}{TAB 3}{ENTER}")
-word_keyboard_set_window = word_parameter_window.CustomizeKeyboard
+    word_keyboard_set_window.wait('visible')
+    word_keyboard_set_window_wr = word_keyboard_set_window.wrapper_object()
 
-word_keyboard_set_window.wait('visible')
-word_keyboard_set_window_wr = word_keyboard_set_window.wrapper_object()
+    # current hotkey ListBox object and wrapper
+    word_current_hotkey_listBox = word_keyboard_set_window.ListBox3.wrapper_object()
 
-# current hotkey ListBox object and wrapper
-word_current_hotkey_listBox = word_keyboard_set_window.ListBox3.wrapper_object()
+    # new hot key Edit object and wrapper
+    new_hk_edit = word_keyboard_set_window.Edit2.wrapper_object()
+    new_hk_edit.draw_outline()
 
-# new hot key Edit object and wrapper
-new_hk_edit = word_keyboard_set_window.Edit2.wrapper_object()
-new_hk_edit.draw_outline()
+    # "Apply" Button wrapper. Customize Keyboard window
+    apply_button = word_keyboard_set_window.AssignButton.wrapper_object()
 
-# "Apply" Button wrapper
-apply_button = word_keyboard_set_window.AssignButton.wrapper_object()
+    result_list = [["Typed", "Recognized", "Result"]]
 
-""" abc_list: alphabet for hotkey combinations
-first pos - VK, second - visualisation in Word, third - shift visualisation "Shift + 1" or "!" for ex."""
-abc_list = [['A', 'A'],
-            ['B', 'B'],
-            ['C', 'C'],
-            ['D', 'D'],
-            ['E', 'E'],
-            ['F', 'F'],
-            ['G', 'G'],
-            ['H', 'H'],
-            ['I', 'I'],
-            ['J', 'J'],
-            ['K', 'K'],
-            ['L', 'L'],
-            ['M', 'M'],
-            ['N', 'N'],
-            ['O', 'O'],
-            ['P', 'P'],
-            ['Q', 'Q'],
-            ['R', 'R'],
-            ['S', 'S'],
-            ['T', 'T'],
-            ['U', 'U'],
-            ['V', 'V'],
-            ['W', 'W'],
-            ['X', 'X'],
-            ['Y', 'Y'],
-            ['Z', 'Z']]
+    # converting a sequence of keys to VK and Shift visualisation mode
+    input_seq = hk_helper.convert_input_data(input_data)
 
-num_list = [['1', '1', '!']]#,
-            # ['2', '2', '@'],
-            # ['3', '3', '#'],
-            # ['4', '4', '$'],
-            # ['5', '5', '{%}'],
-            # ['6', '6', '{^}'],
-            # ['7', '7', '&'],
-            # ['8', '8', '*'],
-            # ['9', '9', '('],
-            #['0', '0', ')']]
+    # current command may have assigned hotkeys
+    hk_helper.clear_current_hotkey(word_current_hotkey_listBox, word_keyboard_set_window_wr)
 
-func_list = [['{F1}', 'F1'],
-             ['{F2}', 'F2'],
-             ['{F3}', 'F3'],
-             ['{F4}', 'F4'],
-             ['{F5}', 'F5'],
-             ['{F6}', 'F6'],
-             ['{F7}', 'F7'],
-             ['{F8}', 'F8'],
-             ['{F9}', 'F9'],
-             ['{F10}', 'F10'],
-             ['{F11}', 'F11'],
-             ['{F12}', 'F12']]
+    # main loop of the program, run through all possible key combinations
+    for i_ctrl in hk_helper.code_list:
 
-num_pad_list = [['{VK_NUMPAD0}', 'Num 0'],
-                ['{VK_NUMPAD1}', 'Num 1'],
-                ['{VK_NUMPAD2}', 'Num 2'],
-                ['{VK_NUMPAD3}', 'Num 3'],
-                ['{VK_NUMPAD4}', 'Num 4'],
-                ['{VK_NUMPAD5}', 'Num 5'],
-                ['{VK_NUMPAD6}', 'Num 6'],
-                ['{VK_NUMPAD7}', 'Num 7'],
-                ['{VK_NUMPAD8}', 'Num 8'],
-                ['{VK_NUMPAD9}', 'Num 9'],
-                ['{VK_ADD}', 'Num +'],
-                ['{VK_DECIMAL}', 'Num .'],
-                ['{VK_DIVIDE}', 'Num /'],
-                ['{VK_MULTIPLY}', 'Num *']]
-
-symbols_list = [[',', ',', '<'],
-                ['.', '.', '>'],
-                ['/', '/', '?'],
-                [';', ';', ':'],
-                ["'", "'", '"'],
-                ['[', '[', '{'],
-                [']', ']', '}'],
-                ['\\', '\\', '|'],
-                ['-', '-', '_'],
-                ['=', '=', '+'],
-                ['`', '`', '{~}']]
-
-spec_symbols_alphabet = [['{BACKSPACE}', 'Backspace'],
-                         ['{SPACE}', 'Space'],
-                         ['{ENTER}', 'Return'],
-                         ['{VK_UP}', 'Up'],
-                         ['{VK_RIGHT}', 'Right'],
-                         ['{DOWN}', 'Down'],
-                         ['{LEFT}', 'Left'],
-                         ['{HOME}', 'Home'],
-                         ['{END}', 'End'],
-                         ['{PGUP}', 'Page Up'],
-                         ['{PGDN}', 'Page Down'],
-                         ['{INS}', 'Insert'],
-                         ['{DEL}', 'Del'],
-                         ['{SCROLLLOCK}', 'Scroll Lock'],
-                         ['{VK_LWIN}', 'WinKey']]
-
-special_set_list = [['A', 'A'],
-                    ['Z', 'Z'],
-                    ['1', '1', '!'],
-                    ['0', '0', ')'],
-                    ['{F1}', 'F1'],
-                    ['{F12}', 'F12'],
-                    ['{VK_NUMPAD0}', 'Num 0'],
-                    ['{VK_NUMPAD9}', 'Num 9'],
-                    ['-', '-', '_'],
-                    ['.', '.', '>'],
-                    ['{VK_UP}', 'Up'],
-                    ['{DEL}', 'Del'],
-                    ['{BACKSPACE}', 'Backspace']]
-
-# code for all possible combination Alt+Ctrl+Shift+a_ABC,Shift+b_ABC
-code_list = ['10000',
-             '10001',
-             '10011',
-             '10100',
-             '10101',
-             '10111',
-             '01000',
-             '01001',
-             '01011',
-             '01100',
-             '01101',
-             '01111',
-             '11000',
-             '11001',
-             '11011',
-             '11100',
-             '11101',
-             '11111',
-             '00100',
-             '00101',
-             '00111']
-
-# commented because the alphabet is too large and it will take about 60 hours to run through all combination
-#alphabet_list = abc_list
-#alphabet_list.extend(num_list)
-#alphabet_list.extend(spec_symbols_alphabet)
-#alphabet_list.extend(func_list)
-#alphabet_list.extend(symbols_list)
-#alphabet_list.extend(num_pad_list)
-alphabet_list = special_set_list
-
-
-result_list = [["Typed", "Recognized", "Result"]]
-
-
-# function for clearing current hotkey combination
-def clear_current_hotkey():
-    for a in range(len(word_current_hotkey_listBox.texts())):
-        word_current_hotkey_listBox.set_focus()
-        word_current_hotkey_listBox.click_input()
-        word_current_hotkey_listBox.type_keys("{UP}{ENTER}")
-
-
-""" def print_list(input_list, err): function for printing result list
-# second param. 1 - only Error
-# second param. 0 - all"""
-def print_list(input_list, err):
-    for a in range(len(input_list)):
-        if ((err == 1) and (input_list[a][2] == 'Error')) or (err == 0):
-            print(input_list[a])
-
-
-# typing hotkey combinations
-def type_hk(input_list):
-    new_hk_edit.set_focus()
-    new_hk_edit.click_input()
-    pywinauto.keyboard.send_keys(input_list[0])
-
-
-# advanced function typing hotkey combinations
-def advanced_type_hk(input_list):
-    type_hk(input_list)
-
-    # if the focus out of window
-    if not word_keyboard_set_window_wr.is_active():
-        word_keyboard_set_window_wr.set_focus()
-        if not word_keyboard_set_window_wr.is_active():
-            print("!!!Critical Error. Window was inactive!!!")
-            print_list(result_list, 0)
-            exit(404)
-        # try again
-        type_hk(input_list)
-
-
-# reading the entered combination and checking the correctness
-def read_and_check_hk(input_list):
-    typed_hk_str = input_list[1][0]
-    status_hk_str = "Error"
-
-    # combination recognized:
-    if len(new_hk_edit.texts()) and (new_hk_edit.texts() != ' '):
-        apply_button.click()
-        current_hk_list = word_current_hotkey_listBox.texts()
-        # recognized something
-        if len(current_hk_list):
-            # recognized hotkey str
-            recog_hk_str = str(current_hk_list[0][0])
-            # checking start: typed_hk_str and recog_hk_str
-            for i in range(len(input_list[1])):
-                if recog_hk_str == input_list[1][i]:
-                    status_hk_str = "OK"
-                    break
-                else:
-                    status_hk_str = "Error"
-            # checking end: typed_hk_str and recog_hk_str
-            clear_current_hotkey()
-        # recognized empty line
+        # does b ABC block exist
+        if hk_helper.decode_b(i_ctrl) == 0:
+            b_abc_block_len = 1
         else:
-            recog_hk_str = "Not recognized"
-            status_hk_str = "Error"
-    # combination not recognized:
-    else:
-        recog_hk_str = "Not captured"
-        status_hk_str = "Error"
-    return [typed_hk_str, recog_hk_str, status_hk_str]
+            b_abc_block_len = len(input_seq)
+
+        # a ABC block
+        for i_alph in input_seq:
+            # b ABC block
+            for j_alph in range(b_abc_block_len):
+                current_comb_list = hk_helper.decode_ctrl(i_ctrl, i_alph, input_seq[j_alph])
+
+                # typing hotkey
+                hk_helper.check_focus(word_main_window, word_keyboard_set_window_wr, word_keyboard_set_window)
+                hk_helper.type_hk(current_comb_list, new_hk_edit)
+                hk_helper.check_focus(word_main_window, word_keyboard_set_window_wr, word_keyboard_set_window)
+
+                # read typed into Edit combination
+                recog_str = hk_helper.read_hk(new_hk_edit, apply_button, word_current_hotkey_listBox)
+                # check if typed and recognized hot key the same
+                temp_result_list = hk_helper.check_hk(current_comb_list, recog_str)
+                # clear current hot key editBox
+                hk_helper.clear_current_hotkey(word_current_hotkey_listBox, word_keyboard_set_window_wr)
+                # adding results to output list
+                result_list.extend([temp_result_list])
+
+    # kill Word app
+    app.kill()
+    return result_list
 
 
-# decode function: does the "B" sector exist
-def decode_b(code_str):
-    if code_str[4] == '1':
-        return int(1)
-    else:
-        return int(0)
+if __name__ == '__main__':
+    # preparation
+    win32api.LoadKeyboardLayout("00000409", 1)  # ENG
+    start_time = time.time()
 
+    # type test keyset here
+    special_set_list = ['A', 'Z', '1', '0', 'F1', 'F12', 'Num 0', 'Num 9', '-', '.', 'Up', 'Del', 'Backspace']
 
-# decode Alt Ctrl Shift combination alphabet
-def decode_ctrl(code_str, a_list, b_list):
-    prefix_gui = ''
-    prefix_1 = ''
-    prefix_2 = ''
-    postfix_1 = ''
-    postfix_2 = ''
-    prefix_gui_list = []
-    postfix_gui_list = []
-    gui_list = []
+    # run autotet
+    result = word_hotkey_auto_test(special_set_list)
 
-    # Alt
-    if code_str[0] == '1':
-        prefix_1 += '{VK_MENU down}'
-        prefix_2 += '{VK_MENU up}'
-        prefix_gui += 'Alt+'
-    # Ctrl
-    if code_str[1] == '1':
-        prefix_1 += '{VK_CONTROL down}'
-        prefix_2 += '{VK_CONTROL up}'
-        prefix_gui += 'Ctrl+'
-    # Shift prefix
-    if code_str[2] == '1':
-        prefix_1 += '{VK_SHIFT down}'
-        prefix_2 += '{VK_SHIFT up}'
-        prefix_gui_list.extend([prefix_gui + 'Shift+' + str(a_list[1])])
-        prefix_gui_list.extend([prefix_gui + str(a_list[2])])
-    else:
-        prefix_gui_list.extend([prefix_gui + str(a_list[1])])
-
-    # Shift postfix
-    if code_str[3] == '1':
-        postfix_1 = '{VK_SHIFT down}'
-        postfix_2 = '{VK_SHIFT up}'
-        postfix_gui_list.extend([',Shift+' + str(b_list[1])])
-        postfix_gui_list.extend([',' + str(b_list[2])])
-    elif code_str[4] == '1':
-        postfix_gui_list.extend([',' + str(b_list[1])])
-
-    if len(postfix_gui_list):
-        for i in range(len(prefix_gui_list)):
-            for j in range(len(postfix_gui_list)):
-                gui_list.extend([prefix_gui_list[i] + postfix_gui_list[j]])
-    else:
-        gui_list.extend(prefix_gui_list)
-
-    # b-segment (second ABC block)
-    if code_str[4] == '0':
-        return [str(prefix_1 + a_list[0] + prefix_2), gui_list]
-    else:
-        return [str(prefix_1 + a_list[0] + prefix_2 + postfix_1 + b_list[0] + postfix_2), gui_list]
-
-
-# current command may have assigned hotkeys
-clear_current_hotkey()
-
-# main loop of the program, run through all possible key combinations
-for i_ctrl in range(len(code_list)):
-
-    # does b ABC block exist
-    if decode_b(code_list[i_ctrl]) == 0:
-        b_abc_block_len = 1
-    else:
-        b_abc_block_len = len(alphabet_list)
-
-    # a ABC block
-    for i_alph in range(len(alphabet_list)):
-
-        # b ABC block
-        for j_alph in range(b_abc_block_len):
-            current_comb_list = decode_ctrl(code_list[i_ctrl], alphabet_list[i_alph], alphabet_list[j_alph])
-            # print(current_comb_list)
-
-            # typing hotkey
-            advanced_type_hk(current_comb_list)
-            # read, recognition, check
-            temp_result_list = read_and_check_hk(current_comb_list)
-            # adding results
-            result_list.extend([temp_result_list])
-# print results
-print("Tested in: " + str(time.time() - start_time) + " sec")
-print("Total checked: " + str(len(result_list) - 1) + " combinations")
-
-print_list(result_list, 1)
-app.kill()
-
-"""
-Shift + F1 - web help
-Ctrl + Shift + Win, Shift + Win - not displayed
-Ctrl + Shift + drop-down menu - not displayed
-"""
+    # print results
+    print("Tested in: " + str(time.time() - start_time) + " sec")
+    print("Total checked: " + str(len(result) - 1) + " combinations")
+    print("Errors report:")
+    hk_helper.print_list(result, 1)

@@ -86,7 +86,7 @@ As far as I was able to find out, this application accepts the following combina
     - Clicking will select a command
     - Hotkeys of the selected command can be modified
     - Backspace keyboard button remove all existing hotkeys
-    - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (подробно реализовано автотестом)
+    - Pressing new keys combination on the keyboard will add the combination to the hotkeys list. (auto test)
     - Until the selection in the commands list is not changed, the last entered hotkey can be changed by entering another combination
     - Selecting another command in the list will store the entered hotkeys
     - If the combination is already used by another command, a message box will appear, asking if the combination should be reassigned.

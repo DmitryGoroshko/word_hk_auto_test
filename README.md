@@ -48,8 +48,6 @@ As far as I was able to find out, this application accepts the following combina
 | 20 |   |   | 1 |   | 1 | **00101**|
 | 21 |   |   | 1 | 1 | 1 | **00111**|
 
-===============================================================================
-
 ## Сheck list:
 1.  Is Hotkeys a dialog modal:
     - dialog window is displayed

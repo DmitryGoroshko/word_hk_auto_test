@@ -5,8 +5,8 @@ This is auto test for Word application (hot key module).
 
 ## Python auto test program description
 ### About the program
-This python script is autotest fot MS Word appliction hotkey module. 
-It's generate all possiple hot key combinations, type and check recognition. 
+This python script is autotest for MS Word application hotkey module. 
+It's generate all possible hot key combinations, type and check recognition. 
 
 ### System requirements
 My configuration:

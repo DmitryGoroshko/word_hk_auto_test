@@ -6,7 +6,7 @@ This is auto test for Word application (hot key module).
 ## Python auto test program description
 ### About the program
 This python script is autotest for MS Word application hotkey module. 
-It's generate all possible hot key combinations, type and check recognition. 
+It's generated all possible hot key combinations, type and check recognition. 
 
 ### System requirements
 My configuration:
@@ -17,7 +17,7 @@ My configuration:
 
 ### Pre-conditions 
 - pywinauto lib
-- please start your default browser before starting the script (beause of the Shift+F1 hotkey)
+- please start your default browser before starting the script (because of the Shift+F1 hotkey)
 - make sure you have the English keyboard layout
 
 ### How it works?
@@ -124,7 +124,7 @@ As far as I was able to find out, this application accepts the following combina
 | ----------- | ----------- |
 |1.	open the scene                                                                      | scene opened |
 |2.	open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|3.	make actions to scene (out from Hotkeys window, but inside parent application area) | scene are not enable does not respond to actions |
+|3.	make actions to scene (out from Hotkeys window, but inside parent application area) | scene is not enable does not respond to actions |
 |3.1.	mouse click                                                                     | application does not respond to actions |
 |3.2.	mouse double click                                                              | application does not respond to actions |
 |3.3.	mouse drug and drop test file from explorer to tested application               | application does not respond to actions |
@@ -166,12 +166,12 @@ As far as I was able to find out, this application accepts the following combina
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                 | Hotkeys dialog window opened |
-|2. Move mouse coursor to Commands list scroll bar                      | mouse coursor is on the Commands list scroll bar |
-|3. Move mouse coursor to the "V" button                                | mouse coursor is on the "V" button  |
+|2. Move mouse cursor to Commands list scroll bar                      | mouse c ursor is on the Commands list scroll bar |
+|3. Move mouse cursor to the "V" button                                | mouse cursor is on the "V" button  |
 |4. Click to the "V" button                                             | Commands list scrolling down |
-|5. Move mouse coursor to the "^" button                                | mouse coursor is on the "^" button |
+|5. Move mouse cursor to the "^" button                                | mouse cursor is on the "^" button |
 |6. Click to the "^" button                                             | Commands list scrolling up |
-|7. Move mouse coursor to the scroll bar element                        | mouse coursor to the scroll bar element |
+|7. Move mouse cursor to the scroll bar element                        | mouse cursor to the scroll bar element |
 |8. Press left mouse and move down                                      | Commands list scrolling down |
 |9. Move mouse up                                                       | Commands list scrolling up |
 |10. release the left mouse button                                      | nothing happened |
@@ -190,8 +190,8 @@ As far as I was able to find out, this application accepts the following combina
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                 | Hotkeys dialog window opened |
-|2. Check if information area located under the commands list           | nformation area located under the commands list |
-|3. Click to the command name in comands list                           | the command cell is highlighted | 
+|2. Check if information area located under the commands list           | Information area located under the commands list |
+|3. Click to the command name in commands list                           | the command cell is highlighted | 
 |4. Check if Information area includes the command name in **bold**     | Information area includes the command name in **bold** |
 |5. Check if Information area includes the command  description         | Information area includes the command  description |
 |6. Check if command description as in the command tooltip on the Ribbon| command description as in the command tooltip on the Ribbon |
@@ -200,31 +200,31 @@ As far as I was able to find out, this application accepts the following combina
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|2. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |3. Enter one of hotkey combination "Ctrl" + one of [a...z]                             | hotkey combination added to the right column in front of command name |
 |4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
-|5. Select another command in the commansd list                                         | last entered hotkey saved |
+|5. Select another command in the commands list                                         | last entered hotkey saved |
 |6. Select previous command again                                                       | the command cell is highlighted |
 |7. Enter new hotkey combination                                                        | hotkey combination added to the right column in front of command name |
-|8. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination and saved |
+|8. Select another command in the commands list                                         | last entered hotkey added to the hotkey combination and saved |
 |9. Check if two hotkey combination are for the same command                            | two hotkey combination are for the same command |
-|10. Select previous command in the commansd list again                                 | the command cell is highlighted |
+|10. Select previous command in the commands list again                                 | the command cell is highlighted |
 |10. Press "Backspace" keyboard button                                                  | all hotkey combination for this command cleared |
 
 ### Test case #7.2 Command list add new correct hotkey 
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|2. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |3. Enter hotkey combination "Ctrl" + "Shift" + "A"                                     | hotkey combination added to the right column in front of command name |
 |4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard "Ctrl+Shift+A" |
-|5. Select another command in the commansd list                                         | last entered hotkey saved |
+|5. Select another command in the commands list                                         | last entered hotkey saved |
 |6. Select previous command again                                                       | the command cell is highlighted |
 |7. Enter hotkey combination "Ctrl" + "Shift" + "Z"                                     | hotkey combination added to the right column in front of command name |
 |8. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard "Ctrl+Shift+Z"|
-|9. Select another command in the commansd list                                         | last entered hotkey added to the hotkey combination and saved |
+|9. Select another command in the commands list                                         | last entered hotkey added to the hotkey combination and saved |
 |10. Check if two hotkey combination are for the same command                           | two hotkey combination are for the same command "Ctrl+Shift+A" and "Ctrl+Shift+Z" |
-|11. Select previous command in the commansd list again                                 | the command cell is highlighted |
+|11. Select previous command in the commands list again                                 | the command cell is highlighted |
 |12. Press "Backspace" keyboard button                                                  | all hotkey combination for this command cleared |
 
 ### Test case #7.3 Command list add already used hotkey
@@ -233,7 +233,7 @@ As far as I was able to find out, this application accepts the following combina
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
 |2. Click to the command name without hot key combination in commands list              | the command cell is highlighted |
 |3. Enter new hotkey combination "Alt" + "F"                                            | hotkey combination  "Alt" + "F"  added to the right column in front of command name |
-|4. Select another command in the commansd list                                         | last entered hotkey saved |
+|4. Select another command in the commands list                                         | last entered hotkey saved |
 |5. Enter the same hotkey combination "Alt" + "F"                                       | a message box will appear, asking if the combination should be reassigned |
 |6. Click to the "Cancel" button in message box                                         | the hotkey combination not saved |
 |7. Enter the same hotkey combination "Alt" + "F"                                       | a message box will appear, asking if the combination should be reassigned |
@@ -243,25 +243,25 @@ As far as I was able to find out, this application accepts the following combina
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|2. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |3. Enter hotkey combination "Ctrl" + "Esc"                                             | hotkey combination not added. Windows Star menu opened. Focus changed |
-|4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|4. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |5. Enter hotkey combination "Alt" + "Space"                                            | hotkey combination not added. Standard Windows context menu of the dialog opened |
 
 ### Test case #7.4 Command list try to add incorrect hotkey 
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|2. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |3. Enter hotkey combination "E" + "4"                                                  | hotkey combination not recognized, not added |
-|4. Click to the command name were hot key combination cell in commands list is empty   | the command cell is highlighted |
+|4. Click to the command name where hot key combination cell in commands list is empty   | the command cell is highlighted |
 |5. Enter hotkey combination "P" + "-"                                                  | hotkey combination not recognized, not added |
 
 ### Test case #7.5 Command list try to add correct hotkey advanced combinations "Ctrl..." + ABC
 | Test Steps | Expected Result |
 | ----------- | ----------- |
 |1.	Open Hotkeys dialog                                                                 | Hotkeys dialog window opened |
-|2. Click to the command name were hot key combination cell in commands list is empty   | The command cell is highlighted |
+|2. Click to the command name where hot key combination cell in commands list is empty   | The command cell is highlighted |
 |3. Enter hotkey combination "Ctrl" + "A"                                               | Hotkey combination added to the right column in front of command name |
 |4. Check if recognized key combination match with the typed from the keyboard          | Recognized key combination match with the typed from the keyboard |
 |5. Repeat typing hotkey combination "Ctrl" + key from the set: ['A','Z','1','0','F1','F12','Num0', 'Num9','-','.','Up','Del','Backspace'] | Hotkey combination added to the right column in front of command name |
@@ -274,7 +274,7 @@ As far as I was able to find out, this application accepts the following combina
 |1.	Open Hotkeys dialog                                                                     | Hotkeys dialog window opened |
 |2. Click to the command (remember it) name without hot key combination in commands list    | the command cell is highlighted |
 |3. Enter new hotkey combination                                                            | hotkey combination added to the right column in front of command name |
-|4. Select another command in the commansd list                                             | last entered hotkey saved |
+|4. Select another command in the commands list                                             | last entered hotkey saved |
 |5. Click "OK" button in Hotkeys window                                                     | Hotkeys dialog closed|
 |6. Select the Ribon in the main window                                                     | Ribon selected |
 |7. Find command from step 2 on the Ribbon, set mouse focus                                 | new hotkey from step 3 in Ribbon tooltips displayed | 
@@ -287,7 +287,7 @@ As far as I was able to find out, this application accepts the following combina
 |1.	Open Hotkeys dialog                                                                     | Hotkeys dialog window opened |
 |2. Click to the command (remember it) name without hot key combination in commands list    | the command cell is highlighted |
 |3. Enter new hotkey combination                                                            | hotkey combination added to the right column in front of command name |
-|4. Select another command in the commansd list                                             | last entered hotkey saved |
+|4. Select another command in the commands list                                             | last entered hotkey saved |
 |5. Click "Close" button in Hotkeys window                                                  | Hotkeys dialog closed |
 |6. Select the Ribon in the main window                                                     | Ribon selected |
 |7. Find command from step 2 on the Ribbon, set mouse focus                                 | new hotkey from step 3 in Ribbon tooltips not displayed | 

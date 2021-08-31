@@ -56,30 +56,25 @@ def add_gui_shift(name: str) -> str:
 
 # decode Alt Ctrl Shift combination alphabet
 def decode_ctrl(code_str, a_list, b_list):
+    prefix_vk = a_list[0]
+    postfix_vk = b_list[0]
     prefix_gui = ''
-    prefix_1 = ''
-    prefix_2 = ''
-    postfix_1 = ''
-    postfix_2 = ''
     prefix_gui_list = []
     postfix_gui_list = []
     gui_list = []
 
     # Alt
     if code_str[0] == '1':
-        prefix_1 += '{VK_MENU down}'
-        prefix_2 += '{VK_MENU up}'
-        prefix_gui += 'Alt+'
+        prefix_vk = add_vk_alt(prefix_vk)
+        prefix_gui = add_gui_alt(prefix_gui)
     # Ctrl
     if code_str[1] == '1':
-        prefix_1 += '{VK_CONTROL down}'
-        prefix_2 += '{VK_CONTROL up}'
-        prefix_gui += 'Ctrl+'
-    # Shift prefix
+        prefix_vk = add_vk_ctrl(prefix_vk)
+        prefix_gui = add_gui_ctrl(prefix_gui)
+    # Shift prefix_vk
     if code_str[2] == '1':
-        prefix_1 += '{VK_SHIFT down}'
-        prefix_2 += '{VK_SHIFT up}'
-        prefix_gui_list.extend([prefix_gui + 'Shift+' + str(a_list[1])])
+        prefix_vk = add_vk_shift(prefix_vk)
+        prefix_gui_list.extend([add_gui_shift(prefix_gui) + str(a_list[1])])
         if len(a_list) > 2:
             prefix_gui_list.extend([prefix_gui + str(a_list[2])])
     else:
@@ -87,8 +82,7 @@ def decode_ctrl(code_str, a_list, b_list):
 
     # Shift postfix
     if code_str[3] == '1':
-        postfix_1 = '{VK_SHIFT down}'
-        postfix_2 = '{VK_SHIFT up}'
+        postfix_vk = add_vk_shift(b_list[0])
         postfix_gui_list.extend([',Shift+' + str(b_list[1])])
         if len(b_list) > 2:
             postfix_gui_list.extend([',' + str(b_list[2])])
@@ -104,9 +98,9 @@ def decode_ctrl(code_str, a_list, b_list):
 
     # b-segment (second ABC block)
     if code_str[4] == '0':
-        return [str(prefix_1 + a_list[0] + prefix_2), gui_list]
+        return [prefix_vk, gui_list]
     else:
-        return [str(prefix_1 + a_list[0] + prefix_2 + postfix_1 + b_list[0] + postfix_2), gui_list]
+        return [prefix_vk + postfix_vk, gui_list]
 
 
 # typing hotkey combinations
